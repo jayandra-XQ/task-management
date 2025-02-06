@@ -3,7 +3,7 @@
 A **Task Management App** built with **Next.js, MongoDB, and NextAuth.js**, allowing multiple users to authenticate and manage their tasks efficiently. Users can **create, view, update, delete, and mark tasks as complete/incomplete** while ensuring secure authentication.
 
 ## 🚀 Live Demo
-🔗 **[View the Live App](your-vercel-deployment-url)**  
+🔗 **[View the Live App](https://task-management-alpha-flax.vercel.app/)**  
 
 ---
 
