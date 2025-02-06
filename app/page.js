@@ -1,11 +1,14 @@
 'use client'
 
+import Header from '@/components/Header';
+import Todo from '@/components/Todo';
 import { useSession, signOut } from 'next-auth/react';
 
 
 export default function Home() {
   const { data: session, status } = useSession();
   console.log('Session', session);
+  const userId = session?.user?._id;
 
   if (status === 'loading') return <p>Loading...</p>;
 
@@ -14,21 +17,8 @@ export default function Home() {
   if (status === 'authenticated') {
     return (
       <>
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
-          <p className=" text-black font-bold ">
-            Signed in as {session.user.email}
-          </p>
-          <button
-            className='className="border-solid  border-black border-2 rounded mt-10 px-4 pt-2 pb-2 "'
-            onClick={() =>
-              signOut(() => {
-                console.log('Sign out');
-              })
-            }
-          >
-            Sign out
-          </button>
-        </div>
+        <Header user={session.user} signOut={signOut} />
+        <Todo userId={userId} />
       </>
     )
   }

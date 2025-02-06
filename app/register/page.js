@@ -5,6 +5,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const page = () => {
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
@@ -21,6 +23,12 @@ const page = () => {
     if (e.target.name === 'password2') {
       setPassword2(e.target.value);
     }
+    if (e.target.name === 'firstname') {
+      setFirstName(e.target.value);
+    }
+    if (e.target.name === 'lastname') {
+      setLastName(e.target.value);
+    }
   }
 
 
@@ -30,7 +38,7 @@ const page = () => {
     if (password === null || password2 === null || password !== password2) {
       setPasswordMatch('Passwords do not match.');
     } else {
-      const response = await Register(email, password)
+      const response = await Register(email, firstname, lastname, password)
       console.log(response)
       toast('User Registered Successfully', {
         position: 'top-right',
@@ -69,6 +77,43 @@ const page = () => {
               onChange={handleChange}
             />
           </div>
+
+
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="firstname"
+            >
+              First Name
+            </label>
+            <input
+              className="shadow appearance-none border border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="firstname"
+              name="firstname"
+              type="text"
+              placeholder="firstname"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="lastname"
+            >
+              LastName
+            </label>
+            <input
+              className="shadow appearance-none border border-black rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="lastname"
+              name="lastname"
+              type="text"
+              placeholder="lastname"
+              onChange={handleChange}
+            />
+          </div>
+
+
           <div className="mb-6">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"

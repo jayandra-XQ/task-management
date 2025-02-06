@@ -7,7 +7,7 @@ export async function POST(req) {
   await ConnectionDB(); // Ensure database connection
 
   try {
-    const { email, password } = await req.json(); // Extract JSON body safely
+    const { email, firstname, lastname, password } = await req.json(); // Extract JSON body safely
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -17,7 +17,7 @@ export async function POST(req) {
 
     // Hash the password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ email, password: hashedPassword });
+    const newUser = new User({ email, firstname, lastname, password: hashedPassword });
 
     await newUser.save();
 
