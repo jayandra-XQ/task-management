@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📝 Task Management Application
 
-## Getting Started
+A **Task Management App** built with **Next.js, MongoDB, and NextAuth.js**, allowing multiple users to authenticate and manage their tasks efficiently. Users can **create, view, update, delete, and mark tasks as complete/incomplete** while ensuring secure authentication.
 
-First, run the development server:
+## 🚀 Live Demo
+🔗 **[View the Live App](your-vercel-deployment-url)**  
 
+---
+
+## ✨ Features
+✅ **User Authentication** - Secure login with **NextAuth.js (Credentials Provider)**  
+✅ **Task CRUD Operations** - Create, Read, Update, Delete tasks  
+✅ **Task Status Update** - Mark tasks as **complete/incomplete**  
+✅ **MongoDB Database** - Persistent data storage  
+✅ **Server Actions** - Efficient backend logic using **Next.js Server Actions**  
+✅ **Optimized UI** - Modern design with **Tailwind CSS**  
+✅ **Error Handling & Loading States** - Smooth user experience  
+
+---
+
+## 🏗️ Tech Stack
+- **Frontend:** Next.js (Server Actions, App Router)  
+- **Backend:** Next.js (Server Actions, NextAuth for Authentication)  
+- **Database:** MongoDB (Mongoose for ORM)  
+- **Authentication:** NextAuth.js (Credentials Provider)  
+- **Styling:** Tailwind CSS  
+- **Notifications:** React Toastify  
+- **Deployment:** Vercel  
+
+---
+
+## ⚡ Installation & Setup
+
+### **1️⃣ Clone the Repository**
 ```bash
+git clone https://github.com/jayandra-XQ/task-management
+cd task-management
+
+
+
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Set Up Environment Variables
+
+Create a .env.local file in the root of your project and add the following:
+
+# NextAuth Config
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-secret-key
+
+# MongoDB Connection
+MONGODB_URI=your-mongodb-connection-string
+
+4️⃣ Run the Development Server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Now, open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🔗 API & Server Actions
 
-## Learn More
+This app uses Next.js Server Actions for backend logic instead of traditional API routes.
+User Authentication (NextAuth)
 
-To learn more about Next.js, take a look at the following resources:
+    Login - Users authenticate using email & password (Credentials Provider).
+    Session Management - NextAuth maintains user sessions securely.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Task Management (CRUD)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    Create Task - Add a new task with a title, description, and due date.
+    Read Tasks - Fetch and display tasks for the authenticated user.
+    Update Task - Edit task details or mark as complete/incomplete.
+    Delete Task - Remove a task permanently.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🚀 Deployment on Vercel
+
+This project is deployed on Vercel for production. To deploy your own version:
+
+    Push the code to GitHub
+    Go to Vercel and create a new project
+    Connect the GitHub repository and deploy
+    Set up environment variables in Vercel
+    Click "Deploy" and get your live URL!
+
+
+🛠️ Future Improvements
+
+🔹 Add real-time updates using WebSockets or React Query
+🔹 Implement categories or priority levels for tasks
+🔹 Enhance UI with animations & dark mode
+📜 License
+
+This project is MIT Licensed. Feel free to use and improve it.
+📞 Contact
+
+For any queries, reach out to:
+📧 Email: jayandrahamal203@gmail.com
+🔗 GitHub: https://github.com/jayandra-XQ
